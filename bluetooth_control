@@ -1,0 +1,22 @@
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  if(Serial.available()){
+    char data;
+    data = Serial.read();
+
+    if (data == "H"){
+      digitalWrite(LED_BUILTIN, HIGH);
+      delay(1000);
+    }
+
+    else if (data == "L"){
+      digitalWrite(LED_BUILTIN,LOW);
+      delay(1000);
+    }
+  }
+}
